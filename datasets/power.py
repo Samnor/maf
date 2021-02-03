@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 import datasets
 import util
-
+#datasets.root = "datasets"
 
 class POWER:
 
@@ -35,7 +35,7 @@ class POWER:
 
 
 def load_data():
-    return np.load(datasets.root + 'power/data.npy')
+    return np.load('datasets/power/data.npy') #np.load(datasets.root + 'power/data.npy')
 
 
 def load_data_split_with_noise():
@@ -46,8 +46,9 @@ def load_data_split_with_noise():
     rng.shuffle(data)
     N = data.shape[0]
 
-    data = np.delete(data, 3, axis=1)
-    data = np.delete(data, 1, axis=1)
+    #data = np.delete(data, 3, axis=1)
+    #data = np.delete(data, 1, axis=1)
+    data = np.delete(data, 0, axis=1)
     ############################
     # Add noise
     ############################

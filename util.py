@@ -1,12 +1,12 @@
-from itertools import izip
+##
 import os
 import numpy as np
 import numpy.random as rng
 import theano
 import theano.tensor as tt
 import matplotlib.pyplot as plt
-import cPickle as pickle
-
+#import cPickle as pickle
+import _pickle as pickle
 
 def isposint(n):
     """
@@ -385,7 +385,7 @@ def copy_model_parms(source_model, target_model):
     Copies the parameters of source_model to target_model.
     """
 
-    for sp, tp in izip(source_model.parms, target_model.parms):
+    for sp, tp in zip(source_model.parms, target_model.parms):
         tp.set_value(sp.get_value())
 
 

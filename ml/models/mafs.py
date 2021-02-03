@@ -1,4 +1,4 @@
-from itertools import izip
+##
 
 import numpy as np
 import numpy.random as rng
@@ -113,7 +113,7 @@ class MaskedAutoregressiveFlow:
 
         if getattr(self, 'batch_norm', False):
 
-            for made, bn in izip(self.mades[::-1], self.bns[::-1]):
+            for made, bn in zip(self.mades[::-1], self.bns[::-1]):
                 x = bn.eval_inv(x)
                 x = made.gen(n_samples, x)
 
@@ -247,7 +247,7 @@ class ConditionalMaskedAutoregressiveFlow:
 
         if getattr(self, 'batch_norm', False):
 
-            for made, bn in izip(self.mades[::-1], self.bns[::-1]):
+            for made, bn in zip(self.mades[::-1], self.bns[::-1]):
                 y = bn.eval_inv(y)
                 y = made.gen(x, n_samples, y)
 

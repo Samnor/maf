@@ -1,6 +1,6 @@
-from itertools import izip
+#
 import numpy as np
-import cPickle as pickle
+import _pickle as pickle
 import matplotlib.pyplot as plt
 
 import datasets
@@ -120,7 +120,7 @@ class CIFAR10:
 
         n_bins = int(np.sqrt(data.N))
         fig, axs = plt.subplots(3, 1)
-        for ax, d, t in izip(axs, [data_r, data_g, data_b], ['red', 'green', 'blue']):
+        for ax, d, t in zip(axs, [data_r, data_g, data_b], ['red', 'green', 'blue']):
             ax.hist(d, n_bins, normed=True)
             ax.set_title(t)
         plt.show()
